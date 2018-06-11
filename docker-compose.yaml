@@ -1,0 +1,21 @@
+version: "2"
+
+services:
+  blog-flask:
+    build:
+      context: .
+    container_name: flask-docx-reports
+    image: docker.io/kuzoncby/flask-docx-reports:latest
+    restart: always
+    ports:
+      - 5000:5000
+  redis:
+    container_name: redis
+    image: docker.io/redis:4-32bit
+    ports:
+      - 6379
+  mongo:
+    container_name: mongo
+    image: docker.io/mongo:3.6
+    ports:
+      - 27017
